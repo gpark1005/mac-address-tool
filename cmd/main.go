@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"mac-address-tool/internal/params"
 	"net/http"
 	"os"
 	"time"
@@ -12,11 +13,10 @@ import (
 
 func main() {
 
-	var apiKey string
-	var macAddress string
+	var opt params.Options
 
-	flag.StringVar(&apiKey, "a", "", "The API request key")
-	flag.StringVar(&macAddress, "m", "", "The MAC address to query")
+	flag.StringVar(&opt.ApiKey, "k", "", "The API request key")
+	flag.StringVar(&opt.MacAddress, "a", "", "The MAC address to query")
 	flag.Parse()
 
 	req, err := http.NewRequest("GET", "https://api.macaddress.io/v1", nil)
@@ -26,8 +26,8 @@ func main() {
 	}
 
 	q := req.URL.Query()
-	q.Add("apiKey", apiKey)
-	q.Add("search", macAddress)
+	q.Add("apiKey", opt.ApiKey)
+	q.Add("search", opt.MacAddress)
 	req.URL.RawQuery = q.Encode()
 
 	client := &http.Client{Timeout: time.Second * 10}
