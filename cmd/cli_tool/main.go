@@ -15,8 +15,10 @@ func main() {
 
 	var opt params.Options
 
-	flag.StringVar(&opt.ApiKey, "k", "", "The API request key")
-	flag.StringVar(&opt.MacAddress, "a", "", "The MAC address to query")
+	flag.StringVar(&opt.ApiKey, "k", "", "(Required) The API request key")
+	flag.StringVar(&opt.MacAddress, "a", "", "(Required) The MAC address to query")
+	flag.StringVar(&opt.Format, "f", "", "(Optional) The format of the return data. Acceptable arguments are: json, xml, or csv. If no argument is specified, "+
+		"only the name will be returned")
 	flag.Parse()
 
 	if err := opt.Valid(); err != nil {
@@ -33,6 +35,7 @@ func main() {
 	q := req.URL.Query()
 	q.Add("apiKey", opt.ApiKey)
 	q.Add("search", opt.MacAddress)
+	q.Add("output", opt.Format)
 	req.URL.RawQuery = q.Encode()
 
 	client := &http.Client{Timeout: time.Second * 10}
