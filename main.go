@@ -18,7 +18,7 @@ func main() {
 	flag.StringVar(&opt.ApiKey, "k", "", "(Required) The API request key")
 	flag.StringVar(&opt.MacAddress, "a", "", "(Required) The MAC address to query")
 	flag.StringVar(&opt.Format, "f", "", "(Optional) The format of the return data. Acceptable arguments are: json, xml, or csv. If no argument is specified, "+
-		"only the name will be returned")
+		"only the vendor name will be returned")
 	flag.Parse()
 
 	if err := opt.Valid(); err != nil {

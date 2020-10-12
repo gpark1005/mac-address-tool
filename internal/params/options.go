@@ -29,7 +29,7 @@ func (o Options) Valid() error {
 	}
 
 	// Validate format argument
-	if o.Format != "" && o.Format != "json" && o.Format != "xml" && o.Format != "csv" {
+	if o.Format != "" && o.Format != "json" && o.Format != "xml" && o.Format != "csv" && o.Format != "vendor" {
 		err := errors.New("Please enter a valid return format, for example: json")
 		return err
 	}
