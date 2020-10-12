@@ -19,15 +19,15 @@ To install this tool, Docker must be installed on your local computer. Check [he
 Before completing the steps below make sure you have followed the instructions under **Obtaining an API key**
 
 
-1. (Optional) To avoid having to constantly enter your API key for each request, it is convenient to set it as an environment variable: `export mlkey=<Your API key>`
+1. (Optional) Store the following alias in your `~/bash_aliases` file to avoid having to run the full `docker run...` command for each request: `alias mlu='docker run --rm mac-address-tool -k=$mlkey'`
 
-2. (Optional) Store the following alias in your `~/bash_aliases` file to avoid having to run the full `docker run...` command for each request: `alias mlu='docker run --rm mac-address-tool -k=$mlkey'`
+2. (Optional) To avoid having to constantly enter your API key for each request, it is convenient to set it as an environment variable: `export mlkey=<Your API key>`
 
 3. Clone the repo and `cd` into the cloned directory
 
 4. Build the docker image: `docker build -t mac-address-tool .`
 
-> Note: If you close the terminal at any point, you will need to perform step 1 again to reset the variable.
+> Note: If you close the terminal at any point, you will need to perform step 2 again to reset the variable.
 
 
 ## Usage
