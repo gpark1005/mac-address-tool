@@ -34,5 +34,10 @@ func (o Options) Valid() error {
 		return err
 	}
 
+	if o.ApiKey == "" {
+		err := errors.New("Please enter a valid API key")
+		return err
+	}
+
 	return nil
 }
