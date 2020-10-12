@@ -54,8 +54,8 @@ If you did not perform steps 1 and 2 you will need to enter the full docker comm
      
 Check [here](https://macaddress.io/api/documentation/making-requests) for further explanation of arguments, errors codes, and output.
 
-> Security Note: There are inherent risk when choosing to store your API key in an environment variable, if an attacker gains access to your `bash_aliases` file, they will be able to make request using your API key.
-> Passing the argument with each request instead of storing it will mitigate risk but will not eliminate it as the key can still be retrieved from shell logs
+> Security Note: There are inherent risk when choosing to store your API key in an environment variable, storing the variable in a temporary shell variable
+> will mitigate the risk but will not eliminate it as the key can still be retrieved from shell logs
 
 
 
