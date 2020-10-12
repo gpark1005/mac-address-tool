@@ -1,6 +1,6 @@
 # MAC Address Lookup Tool
 
-MAC Address Lookup Tool is a dockerized CLI tool that can be used to lookup vendor information using a given MAC address. 
+MAC Address Lookup Tool is a dockerized CLI tool written in Go. It can be used to lookup vendor information using a given MAC address. 
 The tool makes a request to https://macaddress.io/ using the provided arguments.
 
 
@@ -51,4 +51,5 @@ If you did not perform steps 3 and 4 you will need to enter the full docker comm
 
 
  
- 
+ ## License
+ [MIT](https://choosealicense.com/licenses/mit/)
