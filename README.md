@@ -21,7 +21,9 @@ Before completing the steps below make sure you have followed the instructions u
 
 1. (Optional) Store the following alias in your `~/bash_aliases` file to avoid having to run the full `docker run...` command for each request: `alias mlu='docker run --rm mac-address-tool -k=$mlkey'`
 
-2. (Optional) To avoid having to constantly enter your API key for each request, it is convenient to set it as an environment variable: `export mlkey=<Your API key>`
+> Open a terminal to perform steps 2-4
+
+2. (Optional) To avoid having to constantly enter your API key for each request, it is convenient to set it as shell environment variable: `export mlkey=<Your API key>`
 
 3. Clone the repo and `cd` into the cloned directory
 
