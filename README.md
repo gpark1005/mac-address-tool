@@ -39,7 +39,7 @@ The CLI tool accepts 3 arguments:
 
 
 If you performed steps 3 and 4 in the **Installation** section, you can query the MAC address database like so:
--  ``mlu -a=<MAC address>` or `mlu -a=<MAC address> -f=json``
+-  `mlu -a=<MAC address>` or `mlu -a=<MAC address> -f=json`
       
       - Example: `mlu -a=44:38:39:ff:ef:57` or `mlu -a=44:38:39:ff:ef:57 -f=json`
 
