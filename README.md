@@ -4,11 +4,12 @@ MAC Address Lookup Tool is a dockerized CLI tool written in Go. It can be used t
 The tool makes a request to https://macaddress.io/ using the provided arguments.
 
 
-## Getting an API key
+## Obtaining an API key
 
-Usage of this tool requires an API key. To obtain one, you will need to create an account at https://macaddress.io
-
-Once your account is created, you can obtain your API key by clicking your login name in the upper right hand corner of the webpage. 
+Usage of this tool requires an API key. To obtain one, perform the following steps: 
+1. Create an account at https://macaddress.io
+2. Once you are logged in, click your login name in the upper right hand corner of the webpage.
+3. Copy your API key 
 
 
 ## Installation
@@ -37,10 +38,14 @@ The CLI tool accepts 3 arguments:
 
 
 If you performed steps 3 and 4 in the **Installation** section, you can query the MAC address database like so:
-- `mlu -a=44:38:39:ff:ef:57` or `mlu -a=44:38:39:ff:ef:57 -f=json`
+-  ``mlu -a=<MAC address>` or `mlu -a=<MAC address> -f=json``
+      
+      - Example: `mlu -a=44:38:39:ff:ef:57` or `mlu -a=44:38:39:ff:ef:57 -f=json`
 
 If you did not perform steps 3 and 4 you will need to enter the full docker command and pass your API key as an argument:
--  `docker run --rm mac-address-tool -k=<Your API key> -a=44:38:39:ff:ef:57 -f=json`
+-  `docker run --rm mac-address-tool -k=<Your API key> -a=<MAC address> -f=<format>`
+
+     - Example: `docker run --rm mac-address-tool -k=someAPIKey -a=44:38:39:ff:ef:57 -f=json`  
 
 > Security Note: There are inherent risk when choosing to store your API key in an environment variable, if an attacker gains access to your `bash_aliases` file, they will be able to make request using your API key.
 > Passing the argument with each request instead of storing it will mitigate risk but will not eliminate it as the key can still be retrieved from shell logs
