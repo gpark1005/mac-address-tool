@@ -42,12 +42,12 @@ The CLI tool accepts 3 arguments:
       - If argument is excluded, program will output vendor company name only, in text format.
 
 
-If you performed steps 3 and 4 in the **Installation** section, you can query the MAC address database like so:
+If you performed steps 1 and 2 in the **Installation** section, you can query the MAC address database like so:
 -  `mlu -a=<MAC address>` or `mlu -a=<MAC address> -f=json`
       
       - Example: `mlu -a=44:38:39:ff:ef:57` or `mlu -a=44:38:39:ff:ef:57 -f=json`
 
-If you did not perform steps 3 and 4 you will need to enter the full docker command and pass your API key as an argument:
+If you did not perform steps 1 and 2 you will need to enter the full docker command and pass your API key as an argument:
 -  `docker run --rm mac-address-tool -k=<Your API key> -a=<MAC address> -f=<format>`
 
      - Example: `docker run --rm mac-address-tool -k=someAPIKey -a=44:38:39:ff:ef:57 -f=json`
