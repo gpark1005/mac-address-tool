@@ -19,6 +19,11 @@ func main() {
 	flag.StringVar(&opt.MacAddress, "a", "", "The MAC address to query")
 	flag.Parse()
 
+	if err := opt.Valid(); err != nil {
+		log.Println(err)
+		os.Exit(1)
+	}
+
 	req, err := http.NewRequest("GET", "https://api.macaddress.io/v1", nil)
 	if err != nil {
 		log.Print(err)
