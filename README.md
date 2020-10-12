@@ -46,7 +46,9 @@ If you performed steps 3 and 4 in the **Installation** section, you can query th
 If you did not perform steps 3 and 4 you will need to enter the full docker command and pass your API key as an argument:
 -  `docker run --rm mac-address-tool -k=<Your API key> -a=<MAC address> -f=<format>`
 
-     - Example: `docker run --rm mac-address-tool -k=someAPIKey -a=44:38:39:ff:ef:57 -f=json`  
+     - Example: `docker run --rm mac-address-tool -k=someAPIKey -a=44:38:39:ff:ef:57 -f=json`
+     
+Check [here](https://macaddress.io/api/documentation/making-requests) for further explanation of arguments, errors codes, and output.
 
 > Security Note: There are inherent risk when choosing to store your API key in an environment variable, if an attacker gains access to your `bash_aliases` file, they will be able to make request using your API key.
 > Passing the argument with each request instead of storing it will mitigate risk but will not eliminate it as the key can still be retrieved from shell logs
